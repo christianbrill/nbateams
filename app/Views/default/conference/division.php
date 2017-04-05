@@ -9,7 +9,6 @@
 			<tr>
 				<td>Team</td>
 				<td>City</td>
-				<td>Division</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -17,7 +16,7 @@
 				<tr>
 					<td><?= $currentTeam['tea_name'] ?></td>
 					<td><?= $currentTeam['tea_ville'] ?></td>
-					<td><?= $currentTeam['div_name'] ?></td>
+					<td><a href="<?= $this->url('division_division', array('id' => $currentTeam['div_id'], 'divName' => $currentTeam['div_name'])); ?>"><?= $currentTeam['tea_ville'] ?></a></td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>

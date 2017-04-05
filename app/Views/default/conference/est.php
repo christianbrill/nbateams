@@ -19,7 +19,7 @@
 				<tr>
 					<td><?= $currentTeam['tea_name'] ?></td>
 					<td><?= $currentTeam['tea_ville'] ?></td>
-					<td><?= $currentTeam['div_name'] ?></td>
+					<td><a href="<?= $this->url('division_division') ?>"><?= $currentTeam['div_name'] ?></a></td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>

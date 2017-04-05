@@ -12,6 +12,9 @@ class DivisionController extends Controller {
 		$allTeams = $teamModel->findAll();
 		//debug($allTeams);
 
+		$divisionModel = new \Model\DivisionModel;
+		$divisionInfos = $divisionModel->find($id);
+
 		$divisionTeams = array();
 		//I initialize my array
 		foreach($allTeams as $currentTeam) {
@@ -25,7 +28,8 @@ class DivisionController extends Controller {
 		//debug($divisionTeams);
 
 		$this->show('conference/division', array(
-			'divisionTeams' => $divisionTeams
+			'divisionTeams' => $divisionTeams,
+			'divName' => $divisionInfos['div_name']
 		));
 
 	}
