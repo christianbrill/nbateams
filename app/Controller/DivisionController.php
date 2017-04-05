@@ -8,11 +8,18 @@ class DivisionController extends Controller {
 
 	public function division($id, $divName) {
 
-		echo 'Division here';
-		echo $id.'<br>';
-		echo $divName.'<br>';
-		
+		$teamModel = new \Model\TeamModel();
+		$allTeams = $teamModel->findAll();
+		debug($allTeams);
+
+		$divisionTeams = array();
+		//I initialize my array
+		foreach($allTeams as $currentTeam) {
+			if($currentTeam['div_id'] == $id) {
+				$divisionTeams[] = $currentTeam;
+			}
+		}
+		exit;
+
 	}
-
-
 }
