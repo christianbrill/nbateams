@@ -10,16 +10,23 @@ class DivisionController extends Controller {
 
 		$teamModel = new \Model\TeamModel();
 		$allTeams = $teamModel->findAll();
-		debug($allTeams);
+		//debug($allTeams);
 
 		$divisionTeams = array();
 		//I initialize my array
 		foreach($allTeams as $currentTeam) {
+			// if currentTeam is in the asked division
 			if($currentTeam['div_id'] == $id) {
 				$divisionTeams[] = $currentTeam;
 			}
 		}
-		exit;
+
+		// I check
+		//debug($divisionTeams);
+
+		$this->show('conference/division', array(
+			'divisionTeams' => $divisionTeams
+		));
 
 	}
 }

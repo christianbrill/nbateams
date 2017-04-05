@@ -2,6 +2,6 @@
 
 namespace Model;
 
-class TeamModel extends Model {
-    
+class TeamModel extends \W\Model\Model {
+
 }
