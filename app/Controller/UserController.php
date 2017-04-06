@@ -15,7 +15,7 @@ class UserController extends Controller {
 	}
 
 	public function signup() {
-
+		$this->show('user/signup');
 	}
 
 	public function forgotPassword() {

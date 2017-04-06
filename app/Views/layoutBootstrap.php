@@ -39,6 +39,7 @@
 			            <li<?php if($currentPage == 'est'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('conference_est') ?>">Conference Est</a></li>
 			            <li<?php if($currentPage == 'ouest'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('conference_ouest') ?>">Conference Ouest</a></li>
 			            <li<?php if($currentPage == 'signin'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_signin') ?>">Signin</a></li>
+			            <li<?php if($currentPage == 'signup'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_signup') ?>">Signup</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
