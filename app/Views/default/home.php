@@ -2,9 +2,7 @@
 
 <?php $this->start('main_content') ?>
 	<h2>Acceuil</h2>
-	<p>TODO</p>
-	<a href="<?= $this->url('default_contact') ?>">Contact</a><br>
-	<a href="<?= $this->url('conference_est') ?>">Conference Est</a><br>
-	<a href="<?= $this->url('conference_ouest') ?>">Conference Ouest</a><br>
-	<a href="<?= $this->url('user_signin') ?>">Signin</a><br>
+
+	<!-- The information displayed by debug will only be shown if the user is logged in succesfully. -->
+	<?php debug($w_user); ?>
 <?php $this->stop('main_content') ?>

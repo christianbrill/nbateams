@@ -5,11 +5,12 @@ namespace Controller;
 use Model\ConferenceModel;
 use \W\Controller\Controller;
 
-class ConferenceController extends Controller
-{
+class ConferenceController extends Controller {
 
-	public function est()
-	{
+	public function est() {
+		// allows a certain user to access
+		$this->allowTo('user');
+
 		// Je récupère les données de la DB pour une conférence dont l'id est 2
 		$model = new ConferenceModel();
 		$conference = $model->find(2);
@@ -25,8 +26,9 @@ class ConferenceController extends Controller
 		));
 	}
 
-	public function ouest()
-	{
+	public function ouest() {
+		$this->allowTo('user');
+
 		// Je récupère les données de la DB pour une conférence dont l'id est 2
 		$model = new ConferenceModel();
 		$conference = $model->find(1);

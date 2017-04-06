@@ -34,6 +34,7 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
+
 			            <li<?php if($currentPage == 'home'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('default_home') ?>">Home</a></li>
 			            <li<?php if($currentPage == 'contact'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('default_contact') ?>">Contact</a></li>
 			            <li<?php if($currentPage == 'est'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('conference_est') ?>">Conference Est</a></li>
@@ -45,19 +46,22 @@
 						<?php else : ?>
 			            	<li<?php if($currentPage == 'signup'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_logout') ?>">Log Out</a></li>
 						<?php endif; ?>
+
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
 		</header>
 
-	 	<!-- shows the error messages when password or email are incorrect -->
-		<?php if (isset($w_flash_message) && !empty($w_flash_message->message)) : ?>
-	        <div class="alert alert-<?= $w_flash_message->level ?>" role="alert">
-	            <?= $w_flash_message->message ?>
-	        </div>
-	    <?php endif; ?>
-
+		<?php if (!empty($w_user)) : ?>
+			<!-- shows the error messages when password or email are incorrect -->
+			<?php if (isset($w_flash_message) && !empty($w_flash_message->message)) : ?>
+				<div class="alert alert-<?= $w_flash_message->level ?>" role="alert">
+					<?= $w_flash_message->message ?>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
+		
 		<section>
 			<?= $this->section('main_content') ?>
 		</section>
