@@ -11,7 +11,7 @@ class UserController extends Controller {
 	}
 
 	public function signinPost() {
-
+		debug($_POST);
 	}
 
 	public function signup() {
