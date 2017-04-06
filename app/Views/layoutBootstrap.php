@@ -29,28 +29,17 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </button>
-			      <a class="navbar-brand" href="#">Brand</a>
 			    </div>
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select <span class="caret"></span></a>
-			          <ul class="dropdown-menu">
-			            <li><a href="<?= $this->url('default_home') ?>">Home</a></li>
+			            <li<?php if($currentPage == 'home'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('default_home') ?>">Home</a></li>
 			            <li<?php if($currentPage == 'contact'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('default_contact') ?>">Contact</a></li>
 			            <li<?php if($currentPage == 'est'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('conference_est') ?>">Conference Est</a></li>
 			            <li<?php if($currentPage == 'ouest'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('conference_ouest') ?>">Conference Ouest</a></li>
-			          </ul>
-			        </li>
+			            <li<?php if($currentPage == 'signin'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_signin') ?>">Signin</a></li>
 			      </ul>
-			      <form class="navbar-form navbar-left">
-			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="Search">
-			        </div>
-			        <button type="submit" class="btn btn-default">Submit</button>
-				</form>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
