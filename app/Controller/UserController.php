@@ -45,7 +45,7 @@ class UserController extends Controller {
 				$userInfo = $userModel->find($userId);
 				// Then the user is added to the session.
 				$authentificationModel->logUserIn($userInfo);
-				$this->flash('You have been connected with the following email: ' . $userInfo['usr_email'], 'success');
+				$this->flash('You are connected with the following email: ' . $userInfo['usr_email'], 'success');
 				// Now the user is redirected to the home page.
 				$this->redirectToRoute('default_home');
 			} else {
@@ -127,10 +127,22 @@ class UserController extends Controller {
 
 
 	/*=====================================
-		FORGOT PASSWORD FUNCTION
+	FORGOT PASSWORD FUNCTION
 	=====================================*/
 	public function forgotPassword() {
 
 	}
+
+
+	/*=====================================
+		LOGOUT FUNCTION
+	=====================================*/
+	public function logout() {
+		$authentificationModel = new \W\Security\AuthentificationModel();
+		$authentificationModel->logUserOut();
+
+		$this->redirectToRoute('default_home');
+	}
+
 
 }

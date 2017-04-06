@@ -38,8 +38,13 @@
 			            <li<?php if($currentPage == 'contact'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('default_contact') ?>">Contact</a></li>
 			            <li<?php if($currentPage == 'est'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('conference_est') ?>">Conference Est</a></li>
 			            <li<?php if($currentPage == 'ouest'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('conference_ouest') ?>">Conference Ouest</a></li>
-			            <li<?php if($currentPage == 'signin'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_signin') ?>">Signin</a></li>
-			            <li<?php if($currentPage == 'signup'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_signup') ?>">Signup</a></li>
+			            <li<?php if($currentPage == 'signup'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_signup') ?>">Sign Up</a></li>
+
+						<?php if (empty($w_user)) : ?>
+			            	<li<?php if($currentPage == 'signin'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_signin') ?>">Log In</a></li>
+						<?php else : ?>
+			            	<li<?php if($currentPage == 'signup'): ?> class="active" <?php endif; ?>><a href="<?= $this->url('user_logout') ?>">Log Out</a></li>
+						<?php endif; ?>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->

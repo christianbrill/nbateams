@@ -16,5 +16,6 @@
 		['POST', '/signin/', 'User#signinPost', 'user_signinpost'],
 		//nbateams.dev/signup/
 		['GET|POST', '/signup/', 'User#signup', 'user_signup'],
-		//nbateams.dev/forgot_password/
+		//nbateams.dev/logout/
+		['GET', '/logout/', 'User#logout', 'user_logout'],
 	);
