@@ -4,12 +4,6 @@
 	<h2>Sign up here.</h2>
     <p>We are awesome.</p>
 
-    <?php if (isset($w_flash_message) && !empty($w_flash_message->message)) : ?>
-        <div class="alert alert-<?= $w_flash_message->level ?>" role="alert">
-            <?= $w_flash_message->message ?>
-        </div>
-    <?php endif; ?>
-
     <form action="" method="post">
 		<fieldset>
 			<input type="email" class="form-control" name="emailToto" value="" placeholder="Email address" /><br />

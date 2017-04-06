@@ -46,6 +46,13 @@
 			</nav>
 		</header>
 
+	 	<!-- shows the error messages when password or email are incorrect -->
+		<?php if (isset($w_flash_message) && !empty($w_flash_message->message)) : ?>
+	        <div class="alert alert-<?= $w_flash_message->level ?>" role="alert">
+	            <?= $w_flash_message->message ?>
+	        </div>
+	    <?php endif; ?>
+
 		<section>
 			<?= $this->section('main_content') ?>
 		</section>
